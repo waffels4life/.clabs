@@ -25,7 +25,7 @@ void (*next_state(const int current))(void) {
     return current ? off_state : on_state;
 }
 
-int main(void) {
+int ptr_function_behavior(void) {
     int arr[] = {5, 2, 9, 1, 7};
     int n = sizeof(arr) / sizeof(arr[0]);
     qsort(arr, n, sizeof(int), ascending);
@@ -43,6 +43,5 @@ int main(void) {
         state();
         state = next_state(state == on_state);
     }
-
     return 0;
 }

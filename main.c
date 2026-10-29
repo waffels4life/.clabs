@@ -6,13 +6,14 @@
 
 void draw_rectangle(int8_t rows, int8_t cols);
 void minMax(const int ages[], int length, int *min, int *max);
+int demonstrate_process(void);
 
 static void circle_area(const float *radius, float *area) {
     if (radius == NULL || area == NULL) return;
     *area = PI * (*radius) * (*radius);
 }
 
-int main(void) {
+void handle_test_units(void) {
     draw_rectangle(5, 16);
 
     const int ages[] = {20, 22, 18, 35, 48, 26, 87, 70};
@@ -23,6 +24,10 @@ int main(void) {
 
     printf("Lowest age: %d\n", lowest);
     printf("Highest age: %d\n", highest);
+}
+
+int main(void) {
+    demonstrate_process();
     return 0;
 }
 

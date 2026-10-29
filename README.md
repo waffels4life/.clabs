@@ -22,7 +22,9 @@ The usual suspects.
 
 ```text
 CLabratory/
-├── main.c
+├── main.c          <- the main character
+├── ptrfun.c        <- there is a fun in the name but nothing fun in pointer to functions
+├── process.c       <- here to help me with OS lessons
 └── README.md
 ```
 

@@ -1,8 +1,16 @@
+#include <math.h>
 #include <stdio.h>
 #include <stdint.h>
+#include <stdlib.h>
+#define PI 3.14159265358979323846
 
 void draw_rectangle(int8_t rows, int8_t cols);
 void minMax(const int ages[], int length, int *min, int *max);
+
+static void circle_area(const float *radius, float *area) {
+    if (radius == NULL || area == NULL) return;
+    *area = PI * (*radius) * (*radius);
+}
 
 int main(void) {
     draw_rectangle(5, 16);

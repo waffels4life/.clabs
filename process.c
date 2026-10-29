@@ -1,23 +1,19 @@
 #include <stdio.h>
 
-        //       +-------+
-        //       | READY |
-        //       +-------+
-        //           |
-        //           | CPU assigned
-        //           v
-        //       +---------+
-        // +---->| RUNNING |----+
-        // |     +---------+    |
-        // |         |          |
-        // |         | Waiting  | Finished
-        // |         v          v
-        // |     +---------+  +------------+
-        // |     | WAITING |  | TERMINATED |
-        // |     +---------+  +------------+
-        // |         |
-        // +---------+
-        //   Event completed
+// +---------------------------+
+// |          Stack            |  Local variables, function calls
+// +---------------------------+
+// |            ↓              |
+// |                           |
+// |            ↑              |
+// +---------------------------+
+// |           Heap            |  Dynamic memory (malloc)
+// +---------------------------+
+// |      Data Segment         |  Global and static variables
+// +---------------------------+
+// |      Text / Code Segment  |  Program instructions
+// +---------------------------+
+
 // Represents the possible states of a process.
 typedef enum {
     READY,
@@ -25,6 +21,25 @@ typedef enum {
     WAITING,
     TERMINATED
 } ProcessState;
+
+//       +-------+
+//       | READY |
+//       +-------+
+//           |
+//           | CPU assigned
+//           v
+//       +---------+
+// +---->| RUNNING |----+
+// |     +---------+    |
+// |         |          |
+// |         | Waiting  | Finished
+// |         v          v
+// |     +---------+  +------------+
+// |     | WAITING |  | TERMINATED |
+// |     +---------+  +------------+
+// |         |
+// +---------+
+//   Event completed
 
 // Represents a simplified Process Control Block (PCB).
 typedef struct {
